@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OSBREMAKANS LIMITED — Shipping & Logistics</title>
+
+  <meta name="description" content="OSBREMAKANS LIMITED — Reliable shipping, import & export services. Request shipments, track packages, and get timely delivery." />
+  <meta name="keywords" content="shipping, logistics, delivery, Ghana, OSBREMAKANS, import export, freight" />
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --primary: #0B63A6;
+      --accent:  #F59E0B;
+      --muted:   #6B7280;
+      --bg:      #f8fafb;
+      --container: 1100px;
+      --radius: 12px;
+      --form-height: 2000px;
+      --shadow: 0 10px 30px rgba(11,99,166,0.07);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:#0f172a}
+    a{color:inherit;text-decoration:none}
+
+    /* container helper */
+    .container{max-width:var(--container);margin:0 auto;padding:0 20px}
+
+    /* Header / nav */
+    header{background:white;position:sticky;top:0;z-index:60;box-shadow:0 2px 10px rgba(15,23,42,0.04)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{height:48px;width:auto;border-radius:6px}
+    .brand .title{font-weight:700;color:var(--primary);font-family:Poppins, sans-serif}
+    nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0;align-items:center}
+    nav a{padding:8px 10px;border-radius:8px;font-weight:500;color:#0f172a}
+    nav a:hover{background:rgba(11,99,166,0.06)}
+    .cta-btn{background:var(--accent);color:white;padding:8px 14px;border-radius:8px;font-weight:600}
+
+    /* Mobile menu */
+    .mobile-toggle{display:none;border:0;background:none;font-size:20px}
+    .mobile-menu{display:none;padding:12px;background:white;border-top:1px solid #eef2f6}
+
+    /* Hero */
+    .hero{padding:56px 0 40px;background:linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.05));}
+    .hero-inner{display:grid;grid-template-columns:1fr 480px;gap:32px;align-items:center;min-height:420px}
+    .hero-copy h1{font-family:Poppins, sans-serif;font-size:36px;margin:0 0 12px;color:var(--primary)}
+    .hero-copy p{margin:0 0 20px;color:var(--muted);font-size:16px}
+    .hero-controls{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-illus{border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+    .hero-illus img{width:100%;height:100%;object-fit:cover;display:block}
+
+    /* features / services */
+    .services{padding:34px 0}
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .card{background:white;border-radius:12px;padding:18px;box-shadow:var(--shadow);min-height:140px}
+    .card h3{margin:8px 0 6px;font-size:18px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+
+    /* how it works */
+    .how{padding:34px 0}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .step{background:white;padding:20px;border-radius:12px;text-align:center;box-shadow:var(--shadow)}
+    .step .num{display:inline-block;background:var(--primary);color:#fff;width:44px;height:44px;border-radius:50%;line-height:44px;margin-bottom:12px}
+
+    /* form section */
+    .form-section{padding:36px 0}
+    .form-card{background:white;border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+    .form-card iframe{width:100%;height:var(--form-height);border-radius:8px;border:1px solid #eef2f6}
+
+    /* CTA strip */
+    .cta-strip{background:var(--primary);color:white;padding:26px 0;margin-top:18px}
+    .cta-strip a{background:white;color:var(--primary);padding:10px 14px;border-radius:8px;font-weight:600}
+
+    /* contact & footer */
+    footer{padding:28px 0;background:#fff;margin-top:30px}
+    footer .foot-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+    footer p{margin:6px 0;color:var(--muted)}
+
+    /* responsive breakpoints */
+    @media (max-width:1000px){
+      .hero-inner{grid-template-columns:1fr 360px}
+      .grid-4{grid-template-columns:repeat(2,1fr)}
+      .steps{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:720px){
+      .hero-inner{grid-template-columns:1fr}
+      nav ul{display:none}
+      .mobile-toggle{display:block}
+      .mobile-menu{display:block}
+      .grid-4{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr}
+      .hero-copy h1{font-size:26px}
+      .form-card iframe{height:2400px}
+    }
+
+    /* small helpers */
+    .center{text-align:center}
+    .muted{color:var(--muted)}
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav container">
+      <div class="brand">
+        <img src="icon.jpg" alt="OSBREMAKANS logo" id="logo" loading="lazy">
+        <div>
+          <div class="title">OSBREMAKANS LIMITED</div>
+          <div style="font-size:12px;color:var(--muted)">Reliable shipping across Ghana</div>
+        </div>
+      </div>
+
+      <nav>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+        <ul id="navList">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#request">Request Shipment</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- mobile menu container -->
+    <div class="mobile-menu container" id="mobileMenu" style="display:none"></div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Reliable Shipping Across Ghana & Beyond</h1>
+          <p>Fast, secure, and affordable logistics — door-to-door pickup, customs support, and timely delivery.</p>
+          <div class="hero-controls">
+            <a class="btn cta-btn" href="#request">Request Shipment</a>
+            <a class="btn cta-btn" href="https://wa.me/233244759885" target="_blank" rel="noopener">Chat on WhatsApp</a>
+          </div>
+          <div style="display:flex;gap:12px;margin-top:18px;color:var(--muted);font-size:14px">
+            <div>📦 Nationwide pickups</div>
+            <div>🔒 Insurance options</div>
+            <div>📞 +233 53 089 2820</div>
+          </div>
+        </div>
+
+        <div class="hero-illus">
+          <img src="better.jpg" alt="Logistics hero image" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services container" id="services">
+      <div class="center">
+        <h2 style="font-family:Poppins, sans-serif;color:var(--primary)">Why choose OSBREMAKANS</h2>
+        <p class="muted" style="max-width:780px;margin:auto">Trusted logistics solutions tailored for businesses and individuals — secure transit, transparent pricing, and local expertise.</p>
+      </div>
+
+      <div style="margin-top:22px" class="grid-4">
+        <div class="card">
+          <img src="reliable.svg" alt="Reliable delivery icon" style="width:44px;height:44px" loading="lazy">
+          <h3>Reliable Delivery</h3>
+          <p>Door-to-door pickup and careful handling for every package.</p>
+        </div>
+        <div class="card">
+          <img src="pricing.svg" alt="Pricing icon" style="width:44px;height:44px" loading="lazy">
+          <h3>Transparent Pricing</h3>
+          <p>Clear local rates and no hidden fees.</p>
+        </div>
+        <div class="card">
+          <img src="customs.svg" alt="Customs support icon" style="width:44px;height:44px" loading="lazy">
+          <h3>Customs Support</h3>
+          <p>Assistance with import/export paperwork and clearance.</p>
+        </div>
+        <div class="card">
+          <img src="support.svg" alt="Customer support icon" style="width:44px;height:44px" loading="lazy">
+          <h3>Customer Support</h3>
+          <p>WhatsApp & phone updates while your goods are in transit.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how container" id="how">
+      <div class="center">
+        <h2 style="font-family:Poppins, sans-serif;color:var(--primary)">How it works</h2>
+        <p class="muted" style="max-width:700px;margin:auto">Three simple steps from booking to delivery.</p>
+      </div>
+
+      <div style="margin-top:20px" class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Request</h3>
+          <p>Submit the online booking form or contact us on WhatsApp to schedule pickup.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Transit</h3>
+          <p>We collect and move your goods securely and track them in transit.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Delivery</h3>
+          <p>We deliver and confirm receipt via WhatsApp or email.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- REQUEST / FORM SECTION -->
+    <section class="form-section container" id="request">
+      <div class="center">
+        <h2 style="font-family:Poppins, sans-serif;color:var(--primary)">Book Your Shipment</h2>
+        <p class="muted" style="max-width:780px;margin:auto">Complete the form below; we will contact you shortly with a tracking ID.</p>
+      </div>
+
+      <div style="margin-top:20px" class="form-card">
+        <iframe title="Shipment Request Form"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSfNWxeSHJ-Z7xzi1vUts4sbbTPMOJeXZ7N9-nz6lDHln2YhOg/viewform?embedded=true"
+          frameborder="0" marginheight="0" marginwidth="0"></iframe>
+      </div>
+    </section>
+
+    <!-- CTA Strip -->
+    <section class="cta-strip center">
+      <div class="container">
+        <h3 style="margin:0;font-family:Poppins, sans-serif;">Ready to ship? Schedule a pickup today.</h3>
+        <div style="margin-top:12px"><a class="btn" href="#request">Request Shipment</a></div>
+      </div>
+    </section>
+
+    <!-- ABOUT & CONTACT -->
+    <section class="container" id="about" style="padding:40px 0">
+      <div class="center">
+        <h2 style="font-family:Poppins, sans-serif;color:var(--primary)">About OSBREMAKANS</h2>
+        <p class="muted" style="max-width:780px;margin:auto">We are a Ghana-based logistics company focused on safe and reliable shipment solutions for businesses and individuals.</p>
+      </div>
+    </section>
+
+    <section class="container" id="contact" style="padding-bottom:60px">
+      <div style="display:grid;grid-template-columns:1fr 340px;gap:24px;align-items:start">
+        <div>
+          <h3>Contact</h3>
+          <p class="muted">
+            P.O. BOX 90, Nima–Accra<br>
+            Phone: +233 53 089 2820<br>
+            Email: info@yourcompany.com
+          </p>
+        </div>
+        <div style="background:white;border-radius:12px;padding:16px;box-shadow:var(--shadow)">
+          <strong>WhatsApp</strong>
+          <p style="margin-top:8px;">
+            <a href="https://wa.me/233244759885" target="_blank" rel="noopener">Chat with our support team</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container foot-grid">
+      <div>
+        <div style="font-weight:700;color:var(--primary)">OSBREMAKANS LIMITED</div>
+        <p class="muted">Reliable shipping across Ghana • P.O. BOX 90, Nima–Accra</p>
+      </div>
+      <div style="text-align:right">
+        <p style="margin:0"><a href="#services">Services</a> · <a href="#request">Request Shipment</a> · <a href="#contact">Contact</a></p>
+        <p class="muted" style="margin-top:12px">© 2025 OSBREMAKANS LIMITED. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle & smooth scroll
+    (function(){
+      const toggle = document.getElementById('mobileToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const navList = document.getElementById('navList');
+
+      // move navList into mobileMenu for accessibility
+      function buildMobileMenu(){
+        if(!mobileMenu || !navList) return;
+        mobileMenu.innerHTML = "";
+        mobileMenu.appendChild(navList.cloneNode(true));
+      }
+      buildMobileMenu();
+
+      toggle.addEventListener('click', ()=> {
+        const expanded = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", String(!expanded));
+        mobileMenu.style.display = expanded ? 'none' : 'block';
+      });
+
+      // smooth scroll for same-page anchors
+      document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click', function(e){
+          const href = this.getAttribute('href');
+          if(href.length > 1){
+            e.preventDefault();
+            const el = document.querySelector(href);
+            if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+            if(window.innerWidth < 720) mobileMenu.style.display = 'none';
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
