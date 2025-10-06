@@ -1,183 +1,120 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>OSBREMAKANS LIMITED — Shipping & Logistics</title>
-
-  <meta name="description" content="OSBREMAKANS LIMITED — Reliable shipping, import & export services. Request shipments, track packages, and get timely delivery." />
-  <meta name="keywords" content="shipping, logistics, delivery, Ghana, OSBREMAKANS, import export, freight" />
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
-</head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>OSBREMAKANS LIMITED — Shipping & Logistics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    </head>
 <body>
 
-  <header>
-    <div class="nav container">
-      <div class="brand">
-        <img src="icon.jpg" alt="OSBREMAKANS logo" id="logo" loading="lazy">
-        <div>
-          <div class="title">OSBREMAKANS LIMITED</div>
-          <div style="font-size:12px;color:var(--muted)">Reliable shipping across Ghana</div>
+    <header>
+        <div class="nav container">
+            <div class="brand">
+                <img src="icon.jpg" alt="OSBREMAKANS logo" id="logo" loading="lazy">
+                <a href="index.html">OSBREMAKANS LIMITED</a>
+            </div>
+            <nav>
+                <ul id="navList">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="how.html">How it works</a></li>
+                    <li><a href="contact.html">Request Shipment</a></li>
+                    <li><a href="contact.html#about">About</a></li>
+                    <li><a href="contact.html#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-      </div>
+    </header>
 
-      <nav>
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
-        <ul id="navList">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#how">How it works</a></li>
-          <li><a href="#request">Request Shipment</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+    <main>
+        <section class="hero" id="home">
+            <div class="container hero-grid">
+                <div>
+                    <h1>Simple & Reliable Global Shipping and Logistics</h1>
+                    <p>Ship all types of goods, from anywhere to anywhere, reliably and on time.</p>
+                    <a href="contact.html" class="btn">Request a Shipment</a>
+                </div>
+                <div class="hero-image">
+                    <img src="better.jpg" alt="Logistics hero image" loading="lazy">
+                </div>
+            </div>
+        </section>
+        
+        <section class="company-overview" style="padding: 40px 0;">
+            <div class="container center">
+                <h2 class="section-title">Your Trusted Logistics Partner in Ghana</h2>
+                <p class="muted" style="max-width: 800px; margin: auto; font-size: 16px; line-height: 1.6;">
+                    OSBREMAKANS LIMITED is a Ghana-based logistics company committed to providing **safe, reliable, and efficient** shipment solutions for businesses and individuals nationwide. We leverage local expertise and a dedicated fleet to ensure your goods—whether small parcels or large freight—are delivered on time and in perfect condition. Our transparent pricing and commitment to customer support make us the smart choice for all your shipping needs.
+                </p>
+                <div style="margin-top: 20px;">
+                    <a href="contact.html#about" class="btn">Learn More About Us</a>
+                </div>
+            </div>
+        </section>
+        <section class="services" id="services">
+            <div class="container">
+                <h2 class="section-title">Logistics & Freight Services</h2>
+                <div class="service-grid">
+                    <div class="service-card animate-card">
+                        <img src="reliable.svg" alt="Reliable delivery icon" style="width:44px;height:44px" loading="lazy">
+                        <h3>Reliable Delivery</h3>
+                        <p>We take pride in our punctuality and commitment to safe and reliable delivery. Our team ensures that your packages arrive on time, every time, without any damage or loss.</p>
+                    </div>
+                    <div class="service-card animate-card">
+                        <img src="pricing.svg" alt="Pricing icon" style="width:44px;height:44px" loading="lazy">
+                        <h3>Competitive Pricing</h3>
+                        <p>Our commitment is to offer you the best possible value. We provide competitive pricing without compromising on the quality of our services.</p>
+                    </div>
+                    <div class="service-card animate-card">
+                        <img src="customs.svg" alt="Customs support icon" style="width:44px;height:44px" loading="lazy">
+                        <h3>Customs & Documentation</h3>
+                        <p>We provide comprehensive support with customs documentation and regulations. Our experts guide you through the process to ensure a hassle-free experience.</p>
+                    </div>
+                    <div class="service-card animate-card">
+                        <img src="support.svg" alt="Customer support icon" style="width:44px;height:44px" loading="lazy">
+                        <h3>Customer Support</h3>
+                        <p>We are available 24/7 to answer your queries and assist you with any concerns you may have regarding your shipment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <div class="mobile-menu container" id="mobileMenu" style="display:none"></div>
-  </header>
+        <section class="how-it-works" id="how">
+            <div class="container">
+                <h2 class="section-title">How It Works</h2>
+                <div class="steps-grid">
+                    <div class="step animate-card">
+                        <div class="num">1</div>
+                        <h3>Request a Shipment</h3>
+                        <p>Fill out our simple form to request a shipment and get an instant quote.</p>
+                    </div>
+                    <div class="step animate-card">
+                        <div class="num">2</div>
+                        <h3>Get a Confirmation</h3>
+                        <p>A confirmation is sent to you, and our team prepares your shipment for pickup.</p>
+                    </div>
+                    <div class="step animate-card">
+                        <div class="num">3</div>
+                        <h3>Receive Tracking ID</h3>
+                        <p>Get a tracking ID to monitor your shipment's journey in real-time.</p>
+                    </div>
+                    <div class="step animate-card">
+                        <div class="num">4</div>
+                        <h3>Delivery is Complete</h3>
+                        <p>Your package arrives at its destination safely and on time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <h1>Reliable Shipping Across Ghana & Beyond</h1>
-          <p>Fast, secure, and affordable logistics — door-to-door pickup, customs support, and timely delivery.</p>
-          <div class="hero-controls">
-            <a class="btn cta-btn" href="#request">Request Shipment</a>
-            <a class="btn cta-btn" href="https://wa.me/233244759885" target="_blank" rel="noopener">Chat on WhatsApp</a>
-          </div>
-          <div style="display:flex;gap:12px;margin-top:18px;color:var(--muted);font-size:14px">
-            <div>📦 Nationwide pickups</div>
-            <div>🔒 Insurance options</div>
-            <div>📞 +233 53 089 2820</div>
-          </div>
-        </div>
+    </main>
 
-        <div class="hero-illus">
-          <img src="better.jpg" alt="Logistics hero image" loading="lazy">
-        </div>
-      </div>
-    </section>
+    <footer>
+        <p><a href="services.html">Services</a> · <a href="contact.html">Request Shipment</a> · <a href="contact.html#contact">Contact</a></p>
+    </footer>
 
-    <section class="services container" id="services">
-      <div class="center">
-        <h2 style="font-family:Poppins, sans-serif;color:var(--primary)">Why choose OSBREMAKANS</h2>
-        <p class="muted" style="max-width:780px;margin:auto">Trusted logistics solutions tailored for businesses and individuals — secure transit, transparent pricing, and local expertise.</p>
-      </div>
-
-      <div style="margin-top:22px" class="grid-4">
-        <div class="card">
-          <img src="reliable.svg" alt="Reliable delivery icon" style="width:44px;height:44px" loading="lazy">
-          <h3>Reliable Delivery</h3>
-          <p>Door-to-door pickup and careful handling for every package.</p>
-        </div>
-        <div class="card">
-          <img src="pricing.svg" alt="Pricing icon" style="width:44px;height:44px" loading="lazy">
-          <h3>Transparent Pricing</h3>
-          <p>Clear local rates and no hidden fees.</p>
-        </div>
-        <div class="card">
-          <img src="customs.svg" alt="Customs support icon" style="width:44px;height:44px" loading="lazy">
-          <h3>Customs Support</h3>
-          <p>Assistance with import/export paperwork and clearance.</p>
-        </div>
-        <div class="card">
-          <img src="support.svg" alt="Customer support icon" style="width:44px;height:44px" loading="lazy">
-          <h3>Customer Support</h3>
-          <p>WhatsApp & phone updates while your goods are in transit.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="how container" id="how">
-      <div class="center">
-        <h2 style="font-family:Poppins, sans-serif;color:var(--primary)">How it works</h2>
-        <p class="muted" style="max-width:700px;margin:auto">Three simple steps from booking to delivery.</p>
-      </div>
-
-      <div style="margin-top:20px" class="steps">
-        <div class="step">
-          <div class="num">1</div>
-          <h3>Request</h3>
-          <p>Submit the online booking form or contact us on WhatsApp to schedule pickup.</p>
-        </div>
-        <div class="step">
-          <div class="num">2</div>
-          <h3>Transit</h3>
-          <p>We collect and move your goods securely and track them in transit.</p>
-        </div>
-        <div class="step">
-          <div class="num">3</div>
-          <h3>Delivery</h3>
-          <p>We deliver and confirm receipt via WhatsApp or email.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="form-section container" id="request">
-      <div class="center">
-        <h2 style="font-family:Poppins, sans-serif;color:var(--primary)">Book Your Shipment</h2>
-        <p class="muted" style="max-width:780px;margin:auto">Complete the form below; we will contact you shortly with a tracking ID.</p>
-      </div>
-
-      <div style="margin-top:20px" class="form-card">
-        <iframe title="Shipment Request Form"
-          src="https://docs.google.com/forms/d/e/1FAIpQLSfNWxeSHJ-Z7xzi1vUts4sbbTPMOJeXZ7N9-nz6lDHln2YhOg/viewform?embedded=true"
-          frameborder="0" marginheight="0" marginwidth="0"></iframe>
-      </div>
-    </section>
-
-    <section class="cta-strip center">
-      <div class="container">
-        <h3 style="margin:0;font-family:Poppins, sans-serif;">Ready to ship? Schedule a pickup today.</h3>
-        <div style="margin-top:12px"><a class="btn" href="#request">Request Shipment</a></div>
-      </div>
-    </section>
-
-    <section class="container" id="about" style="padding:40px 0">
-      <div class="center">
-        <h2 style="font-family:Poppins, sans-serif;color:var(--primary)">About OSBREMAKANS</h2>
-        <p class="muted" style="max-width:780px;margin:auto">We are a Ghana-based logistics company focused on safe and reliable shipment solutions for businesses and individuals.</p>
-      </div>
-    </section>
-
-    <section class="container" id="contact" style="padding-bottom:60px">
-      <div style="display:grid;grid-template-columns:1fr 340px;gap:24px;align-items:start">
-        <div>
-          <h3>Contact</h3>
-          <p class="muted">
-            P.O. BOX 90, Nima–Accra<br>
-            Phone: +233 53 089 2820<br>
-            Email: info@yourcompany.com
-          </p>
-        </div>
-        <div style="background:white;border-radius:12px;padding:16px;box-shadow:var(--shadow)">
-          <strong>WhatsApp</strong>
-          <p style="margin-top:8px;">
-            <a href="https://wa.me/233244759885" target="_blank" rel="noopener">Chat with our support team</a>
-          </p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container foot-grid">
-      <div>
-        <div style="font-weight:700;color:var(--primary)">OSBREMAKANS LIMITED</div>
-        <p class="muted">Reliable shipping across Ghana • P.O. BOX 90, Nima–Accra</p>
-      </div>
-      <div style="text-align:right">
-        <p style="margin:0"><a href="#services">Services</a> · <a href="#request">Request Shipment</a> · <a href="#contact">Contact</a></p>
-        <p class="muted" style="margin-top:12px">© 2025 OSBREMAKANS LIMITED. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
