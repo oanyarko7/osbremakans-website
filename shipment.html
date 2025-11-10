@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Request Shipment - OSBREMAKANS LIMITED</title>
+    <meta name="description" content="Request a shipment from OSBREMAKANS LIMITED. Fill out the form to get a quote and tracking ID for your cargo.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="nav container">
+        <div class="brand">
+            <img src="icon.jpg" alt="OSBREMAKANS logo" id="logo" loading="lazy">
+            <a href="index.html">OSBREMAKANS LIMITED</a>
+        </div>
+        <nav>
+            <ul id="navList">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="how.html">How it works</a></li>
+                <li><a href="shipment.html">Request Shipment</a></li>
+                <li><a href="contact.html#about">About</a></li>
+                <li><a href="contact.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="form-section" id="request">
+        <div class="container">
+            <div class="center">
+                <h2 style="font-family:Poppins, sans-serif;color:var(--primary)">Book Your Shipment</h2>
+                <p class="muted" style="max-width:780px;margin:auto">
+                    Complete the form below; we will contact you shortly with a tracking ID.
+                </p>
+            </div>
+            <form class="shipment-form" action="https://formspree.io/f/mnqvwbqr" method="POST">
+
+                <!-- Sender Information -->
+                <h3>Sender Information</h3>
+                <label for="senderName">Full Name</label>
+                <input type="text" id="senderName" name="senderName" placeholder="John Doe" required>
+
+                <label for="senderEmail">Email</label>
+                <input type="email" id="senderEmail" name="senderEmail" placeholder="john@example.com" required>
+
+                <label for="senderPhone">Phone</label>
+                <input type="tel" id="senderPhone" name="senderPhone" placeholder="+233 123 456 789" required>
+
+                <!-- Recipient Information -->
+                <h3>Recipient Information</h3>
+                <label for="recipientName">Full Name</label>
+                <input type="text" id="recipientName" name="recipientName" placeholder="Jane Doe" required>
+
+                <label for="recipientAddress">Address</label>
+                <input type="text" id="recipientAddress" name="recipientAddress" placeholder="Accra, Ghana" required>
+
+                <label for="recipientPhone">Phone</label>
+                <input type="tel" id="recipientPhone" name="recipientPhone" placeholder="+233 987 654 321" required>
+
+                <!-- Shipment Details -->
+                <h3>Shipment Details</h3>
+                <label for="packageType">Package Type</label>
+                <select id="packageType" name="packageType" required>
+                    <option value="">Select package type</option>
+                    <option value="documents">Documents</option>
+                    <option value="parcel">Parcel</option>
+                    <option value="freight">Freight</option>
+                </select>
+
+                <label for="weight">Weight (kg)</label>
+                <input type="number" id="weight" name="weight" min="0" step="0.01" placeholder="1.5" required>
+
+                <label for="notes">Additional Notes</label>
+                <textarea id="notes" name="notes" placeholder="Any special instructions..."></textarea>
+
+                <button type="submit">Request Shipment</button>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p><a href="services.html">Services</a> · <a href="shipment.html">Request Shipment</a> · <a href="contact.html#contact">Contact</a></p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

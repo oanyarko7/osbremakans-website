@@ -3,7 +3,7 @@
   const toggle = document.getElementById('mobileToggle');
   const mobileMenu = document.getElementById('mobileMenu');
   const navList = document.getElementById('navList');
-  
+
   // Mobile Menu Toggle
   function buildMobileMenu(){
     if(!mobileMenu || !navList) return;
@@ -21,29 +21,80 @@
   }
 
   // Scroll Animation (Intersection Observer)
-  // This efficiently checks if an element is in view to add the 'is-visible' class
   if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
-            // Stop observing once the element is visible
-            observer.unobserve(entry.target); 
+            observer.unobserve(entry.target);
           }
         });
-      }, {
-        // Check if element is 10% visible
-        threshold: 0.1 
-      });
+      }, { threshold: 0.1 });
 
-      // Target all elements with the 'animate-card' class on the current page
       document.querySelectorAll('.animate-card').forEach(card => {
         observer.observe(card);
       });
   } else {
-      // Fallback for older browsers: show all elements immediately
       document.querySelectorAll('.animate-card').forEach(card => {
           card.classList.add('is-visible');
       });
   }
+
+  // Shipment Form Submission (Formspree)
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector(".shipment-form");
+
+    if (form) {
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault(); // prevent page reload
+
+        const formData = new FormData(form);
+
+        try {
+          const response = await fetch(form.action, {
+            method: form.method,
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (response.ok) {
+            // Clear the form
+            form.reset();
+
+            // Show animated confirmation message
+            const message = document.createElement("div");
+            message.textContent = "Thank you! Your shipment request has been submitted. We will contact you shortly.";
+            message.style.background = "#D1FAE5";
+            message.style.color = "#065F46";
+            message.style.padding = "12px 16px";
+            message.style.borderRadius = "8px";
+            message.style.marginTop = "16px";
+            message.style.textAlign = "center";
+            message.style.fontWeight = "600";
+            message.style.opacity = 0;
+            message.style.transform = "translateY(-20px)";
+            message.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+
+            form.parentNode.insertBefore(message, form.nextSibling);
+
+            requestAnimationFrame(() => {
+              message.style.opacity = 1;
+              message.style.transform = "translateY(0)";
+            });
+
+            setTimeout(() => {
+              message.style.opacity = 0;
+              message.style.transform = "translateY(-20px)";
+              message.addEventListener("transitionend", () => message.remove());
+            }, 8000);
+          } else {
+            alert("Oops! There was a problem submitting your form. Please try again.");
+          }
+        } catch (error) {
+          alert("Network error. Please try again later.");
+        }
+      });
+    }
+  });
+
 })();

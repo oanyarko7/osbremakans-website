@@ -5,7 +5,7 @@
   --bg:      #f8fafb;
   --container: 1100px;
   --radius: 12px;
-  --form-height: 2000px;
+  --form-height: 1200px; /* Reduced default height for custom form */
   --shadow: 0 10px 30px rgba(11,99,166,0.07);
 }
 *{box-sizing:border-box}
@@ -21,12 +21,12 @@ header{background:white;position:sticky;top:0;z-index:60;box-shadow:0 2px 10px r
 .brand{display:flex;align-items:center;gap:12px}
 .brand img{height:48px;width:auto;border-radius:6px;transition:transform 0.3s ease-in-out}
 .brand img:hover{transform:scale(1.1)}
-.brand a{font-weight:700;color:var(--primary);font-family:Poppins, sans-serif;} /* Fixed target for brand name */
+.brand a{font-weight:700;color:var(--primary);font-family:Poppins, sans-serif;} 
 nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0;align-items:center}
 nav a{padding:8px 10px;border-radius:8px;font-weight:500;color:#0f172a}
 nav a:hover{background:rgba(11,99,166,0.06);transform:translateY(-2px)}
 .cta-btn{background:var(--accent);color:white;padding:8px 14px;border-radius:8px;font-weight:600;transition:all 0.3s ease-in-out}
-.cta-btn:hover{background:#e08f0a;transform:scale(1.05)} /* FIXED: Replaced darken() */
+.cta-btn:hover{background:#e08f0a;transform:scale(1.05)} 
 
 /* Mobile menu */
 .mobile-toggle{display:none;border:0;background:none;font-size:20px}
@@ -34,19 +34,18 @@ nav a:hover{background:rgba(11,99,166,0.06);transform:translateY(-2px)}
 .mobile-menu #navList{flex-direction: column; gap: 8px; align-items: stretch;}
 .mobile-menu #navList li a{display: block; width: 100%;}
 
-
 /* Hero */
 .hero{padding:56px 0 40px;background:linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.05));}
-.hero-grid{display:grid;grid-template-columns:1fr 480px;gap:32px;align-items:center;min-height:420px}
-.hero-grid h1{font-family:Poppins, sans-serif;font-size:36px;margin:0 0 12px;color:var(--primary)}
-.hero-grid p{margin:0 0 20px;color:var(--muted);font-size:16px}
-.hero-image{border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+.hero-grid{display:grid;grid-template-columns:1fr 480px;gap:32px;align-items:center;min-height:420px} 
+.hero-grid h1{font-family:Poppins, sans-serif;font-size:36px;margin:0 0 12px;color:var(--primary)} 
+.hero-grid p{margin:0 0 20px;color:var(--muted);font-size:16px} 
+.hero-image{border-radius:14px;overflow:hidden;box-shadow:var(--shadow)} 
 .hero-image img{width:100%;height:100%;object-fit:cover;display:block}
 
 /* features / services & how it works */
 .services, .how-it-works{padding:34px 0}
-.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:20px}
+.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px} 
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:20px} 
 
 /* Animation Styles */
 .animate-card {
@@ -65,8 +64,7 @@ nav a:hover{background:rgba(11,99,166,0.06);transform:translateY(-2px)}
 .service-grid .animate-card:nth-child(4), .steps-grid .animate-card:nth-child(4) { transition-delay: 0.3s; }
 .service-grid .animate-card:nth-child(5), .steps-grid .animate-card:nth-child(5) { transition-delay: 0.4s; }
 
-
-.service-card, .step{background:white;border-radius:12px;padding:18px;box-shadow:var(--shadow);min-height:140px}
+.service-card, .step{background:white;border-radius:12px;padding:18px;box-shadow:var(--shadow);min-height:140px} 
 .step{min-height:auto;text-align:center;padding:20px}
 
 .service-card h3, .step h3{margin:8px 0 6px;font-size:18px}
@@ -76,7 +74,40 @@ nav a:hover{background:rgba(11,99,166,0.06);transform:translateY(-2px)}
 /* form section */
 .form-section{padding:36px 0}
 .form-card{background:white;border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
-.form-card iframe{width:100%;height:var(--form-height);border-radius:8px;border:1px solid #eef2f6}
+/* New: Custom form styling for shipment.html */
+.shipment-form {
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
+  padding: 24px;
+  border-radius: var(--radius);
+  background: white;
+  box-shadow: var(--shadow);
+}
+.shipment-form input, 
+.shipment-form select, 
+.shipment-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+.shipment-form button {
+  background: var(--accent);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+.shipment-form button:hover {
+  background: #e08f0a;
+  transform: scale(1.02);
+}
 
 /* CTA strip */
 .cta-strip{background:var(--primary);color:white;padding:26px 0;margin-top:18px}
@@ -88,7 +119,7 @@ footer{
   padding:28px 0;
   background:#fff;
   margin-top:30px;
-  text-align: center; /* FIXED: Centered footer content */
+  text-align: center; 
 }
 footer .foot-grid{
   display:grid;
@@ -100,39 +131,32 @@ footer p{
   margin:6px 0;
   color:var(--muted);
 }
-/* Style for Footer Links */
-footer p a {
-  color: var(--primary); 
-  text-decoration: underline; 
-  transition: all 0.2s ease-in-out; 
-}
-/* Hover Effect for Footer Links */
-footer p a:hover {
-  color: var(--accent);
-  text-decoration: none;
-}
+#contact a { color: var(--primary); text-decoration: underline; transition: all 0.2s ease-in-out; }
+#contact a:hover { color: var(--accent); text-decoration: none; }
+footer p a { color: var(--primary); text-decoration: underline; transition: all 0.2s ease-in-out; }
+footer p a:hover { color: var(--accent); text-decoration: none; }
 
 /* small helpers */
 .center{text-align:center}
 .muted{color:var(--muted)}
 .section-title{font-family:Poppins, sans-serif;color:var(--primary);text-align:center}
 .btn{background:var(--accent);color:white;padding:8px 14px;border-radius:8px;font-weight:600;transition:all 0.3s ease-in-out}
-.btn:hover{background:#e08f0a;transform:scale(1.02)} /* FIXED: Replaced darken() */
-
+.btn:hover{background:#e08f0a;transform:scale(1.02)} 
 
 /* responsive breakpoints */
 @media (max-width:1000px){
-  .hero-grid{grid-template-columns:1fr 360px}
-  .service-grid{grid-template-columns:repeat(2,1fr)}
-  .steps-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-grid{grid-template-columns:1fr 360px} 
+  .service-grid{grid-template-columns:repeat(2,1fr)} 
+  .steps-grid{grid-template-columns:repeat(2,1fr)} 
 }
 @media (max-width:720px){
-  .hero-grid{grid-template-columns:1fr}
+  .hero-grid{grid-template-columns:1fr} 
   nav ul{display:none}
   .mobile-toggle{display:block}
   .mobile-menu{display:block}
-  .service-grid{grid-template-columns:1fr}
-  .steps-grid{grid-template-columns:1fr}
-  .hero-grid h1{font-size:26px}
+  .service-grid{grid-template-columns:1fr} 
+  .steps-grid{grid-template-columns:1fr} 
+  .hero-grid h1{font-size:26px} 
   .form-card iframe{height:2400px}
+  .shipment-form { padding: 16px; }
 }
