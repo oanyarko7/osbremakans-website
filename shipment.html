@@ -21,7 +21,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="how.html">How it works</a></li>
-                <li><a href="shipment.html">Request Shipment</a></li>
+                <li><a href="shipment.html" class="active">Request Shipment</a></li>
                 <li><a href="contact.html#about">About</a></li>
                 <li><a href="contact.html#contact">Contact</a></li>
             </ul>
@@ -38,7 +38,9 @@
                     Complete the form below; we will contact you shortly with a tracking ID.
                 </p>
             </div>
-            <form class="shipment-form" action="https://formspree.io/f/xwpaejzb" method="POST"></form>
+
+            <!-- ✅ Form starts here -->
+            <form class="shipment-form" action="https://formspree.io/f/xwpaejzb" method="POST">
 
                 <!-- Sender Information -->
                 <h3>Sender Information</h3>
@@ -80,12 +82,17 @@
 
                 <button type="submit">Request Shipment</button>
             </form>
+            <!-- ✅ Form ends here -->
         </div>
     </section>
 </main>
 
 <footer>
-    <p><a href="services.html">Services</a> · <a href="shipment.html">Request Shipment</a> · <a href="contact.html#contact">Contact</a></p>
+    <p>
+        <a href="services.html">Services</a> · 
+        <a href="shipment.html">Request Shipment</a> · 
+        <a href="contact.html#contact">Contact</a>
+    </p>
 </footer>
 
 <script src="script.js"></script>
