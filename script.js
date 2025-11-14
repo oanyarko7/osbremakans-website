@@ -1,53 +1,53 @@
 // Functionality for all pages
-(function(){
+(function () {
   const toggle = document.getElementById('mobileToggle');
   const mobileMenu = document.getElementById('mobileMenu');
   const navList = document.getElementById('navList');
 
-  // Mobile Menu Toggle
-  function buildMobileMenu(){
-    if(!mobileMenu || !navList) return;
+  // ✅ Build Mobile Menu if missing
+  function buildMobileMenu() {
+    if (!mobileMenu || !navList) return;
     mobileMenu.innerHTML = "";
     mobileMenu.appendChild(navList.cloneNode(true));
   }
   buildMobileMenu();
 
+  // ✅ Hamburger Toggle with Slide Animation
   if (toggle) {
     toggle.addEventListener('click', () => {
       const expanded = toggle.getAttribute("aria-expanded") === "true";
       toggle.setAttribute("aria-expanded", String(!expanded));
-      mobileMenu.style.display = expanded ? 'none' : 'block';
+      mobileMenu.classList.toggle('show', !expanded);
     });
   }
 
-  // Scroll Animation (Intersection Observer)
+  // ✅ Scroll Animation (Intersection Observer)
   if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
 
-      document.querySelectorAll('.animate-card').forEach(card => {
-        observer.observe(card);
-      });
+    document.querySelectorAll('.animate-card').forEach(card => {
+      observer.observe(card);
+    });
   } else {
-      document.querySelectorAll('.animate-card').forEach(card => {
-          card.classList.add('is-visible');
-      });
+    document.querySelectorAll('.animate-card').forEach(card => {
+      card.classList.add('is-visible');
+    });
   }
 
-  // Shipment Form Submission (Formspree)
+  // ✅ Shipment Form Submission (Formspree)
   document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector(".shipment-form");
 
     if (form) {
       form.addEventListener("submit", async (e) => {
         e.preventDefault(); // prevent page reload
-
         const formData = new FormData(form);
 
         try {
@@ -58,10 +58,9 @@
           });
 
           if (response.ok) {
-            // Clear the form
             form.reset();
 
-            // Show animated confirmation message
+            // Confirmation Message
             const message = document.createElement("div");
             message.textContent = "Thank you! Your shipment request has been submitted. We will contact you shortly.";
             message.style.background = "#D1FAE5";

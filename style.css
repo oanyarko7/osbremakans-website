@@ -34,6 +34,39 @@ nav a:hover{background:rgba(11,99,166,0.06);transform:translateY(-2px)}
 .mobile-menu #navList{flex-direction: column; gap: 8px; align-items: stretch;}
 .mobile-menu #navList li a{display: block; width: 100%;}
 
+/* Animated Hamburger (☰ → ✕) */
+.mobile-toggle {
+  width: 30px;
+  height: 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.mobile-toggle span {
+  display: block;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animate into X when expanded */
+.mobile-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+.mobile-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.mobile-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
 /* Hero */
 .hero{padding:56px 0 40px;background:linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.05));}
 .hero-grid{display:grid;grid-template-columns:1fr 480px;gap:32px;align-items:center;min-height:420px} 
