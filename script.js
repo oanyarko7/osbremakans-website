@@ -11,15 +11,49 @@
     mobileMenu.appendChild(navList.cloneNode(true));
   }
   buildMobileMenu();
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. Select the necessary elements
+    const toggleButton = document.querySelector('.mobile-toggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const navList = document.getElementById('mobileNavList');
 
-  // ✅ Hamburger Toggle with Slide Animation
-  if (toggle) {
-    toggle.addEventListener('click', () => {
-      const expanded = toggle.getAttribute("aria-expanded") === "true";
-      toggle.setAttribute("aria-expanded", String(!expanded));
-      mobileMenu.classList.toggle('show', !expanded);
+    // 2. Function to toggle the menu state
+    function toggleMobileMenu() {
+        const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+        
+        // Toggle the 'aria-expanded' attribute on the button
+        toggleButton.setAttribute('aria-expanded', !isExpanded);
+        
+        // Toggle the 'active' class on the menu container
+        mobileMenu.classList.toggle('active');
+    }
+
+    // 3. Attach the event listener to the button
+    if (toggleButton) {
+        toggleButton.addEventListener('click', toggleMobileMenu);
+    }
+    
+    // 4. (Optional but recommended) Close the menu when a link is clicked
+    if (navList) {
+        navList.addEventListener('click', (event) => {
+            if (event.target.tagName === 'A') {
+                // If a link is clicked, close the menu after a small delay
+                setTimeout(toggleMobileMenu, 200); 
+            }
+        });
+    }
+
+    // 5. (Optional) Close the menu on resize (when desktop view returns)
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 720) {
+            // Check if menu is expanded/active and close it if necessary
+            if (toggleButton.getAttribute('aria-expanded') === 'true') {
+                toggleButton.setAttribute('aria-expanded', 'false');
+                mobileMenu.classList.remove('active');
+            }
+        }
     });
-  }
+});
 
   // ✅ Scroll Animation (Intersection Observer)
   if ('IntersectionObserver' in window) {

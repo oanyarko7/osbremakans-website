@@ -33,7 +33,72 @@ nav a:hover{background:rgba(11,99,166,0.06);transform:translateY(-2px)}
 .mobile-menu{display:none;padding:12px;background:white;border-top:1px solid #eef2f6}
 .mobile-menu #navList{flex-direction: column; gap: 8px; align-items: stretch;}
 .mobile-menu #navList li a{display: block; width: 100%;}
+.mobile-menu.active {display: block;}
+.mobile-menu ul {
+    list-style: none; /* Removes the bullets */
+    margin: 0;
+    padding: 0;
+}
+/* Update or add this block in style.css */
 
+/* Mobile menu */
+.mobile-menu{
+    display: none; /* Crucial: Hides the menu on page load */
+    padding: 0; /* Remove padding from the menu container itself */
+    background: white;
+    border-top: 1px solid #eef2f6;
+    position: absolute; /* Ensures it sits below the header */
+    width: 100%;
+    z-index: 50; 
+    box-shadow: 0 5px 10px rgba(15,23,42,0.04);
+}
+
+/* 1. Reset the list styling */
+.mobile-menu ul {
+    list-style: none; /* <-- FIX: Removes the bullet points */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    display: flex;
+    flex-direction: column; 
+    align-items: stretch;
+}
+
+/* 2. Style the links as full-width tappable items */
+.mobile-menu ul li {
+    border-bottom: 1px solid #eef2f6; /* Use a very light line for separation */
+}
+
+/* Remove the bottom border from the very last item */
+.mobile-menu ul li:last-child {
+    border-bottom: none;
+}
+
+.mobile-menu ul li a {
+    display: block; /* Makes the entire link area tappable */
+    width: 100%;
+    padding: 12px 20px; /* Generous padding for tapping */
+    color: #0f172a; 
+    text-decoration: none; 
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.mobile-menu ul li a:hover {
+    background: rgba(11,99,166,0.06);
+}
+
+.mobile-menu a {
+    /* Ensure links are full-width and styled nicely */
+    display: block; 
+    padding: 10px 15px; 
+    color: #0f172a; /* Dark text */
+    text-decoration: none; 
+    border-bottom: 1px solid #eee; /* Optional separator */
+}
+
+.mobile-menu a:hover {
+    background: rgba(11,99,166,0.06);
+}
 /* Animated Hamburger (☰ → ✕) */
 .mobile-toggle {
   width: 30px;
@@ -55,6 +120,85 @@ nav a:hover{background:rgba(11,99,166,0.06);transform:translateY(-2px)}
   border-radius: 2px;
   transition: all 0.3s ease;
 }
+/* Fix WhatsApp card pushing too far right on mobile */
+@media (max-width: 720px) {
+
+  footer .foot-grid {
+    grid-template-columns: 1fr !important;   /* Single column on mobile */
+    text-align: left;
+  }
+  .mobile-toggle{
+        display:block; /* <-- This shows the icon on mobile */
+    }
+
+  footer .foot-grid > div {
+    width: 100%;
+  }
+  nav ul{
+        display:none; /* <-- This hides the full desktop links on mobile */
+    }
+  #contact > div { /* Targeting the inner grid container */
+        grid-template-columns: 1fr !important; 
+        gap: 16px !important;
+  }
+  .container#contact {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+  /* Optional: ensure WhatsApp card stays within screen */
+  #contact .whatsapp,
+  #contact .whatsapp-card {
+    width: 100%;
+    margin: 0;
+    padding: 16px;
+    box-sizing: border-box;
+  }
+}/* --- FIX: WhatsApp Button Styling --- */
+
+/* 1. Target the WhatsApp link explicitly (based on its parent div's inline style) */
+/* We target the link inside the white-background container */
+#contact a[href*="wa.me"] {
+    /* CRITICAL: Make it act like a block element so it can have width/padding */
+    display: block; 
+    
+    /* Make it look like a button */
+    background: #25D366; /* Standard WhatsApp Green */
+    color: white !important; /* Override other link colors */
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none !important; /* Remove underline */
+    
+    /* FIX: Prevent text from being cut off */
+    white-space: nowrap; /* Ensures the text "Chat with our support team" stays on one line */
+    overflow: hidden; 
+    text-overflow: ellipsis; /* Optional: adds ... if it somehow gets too long */
+    
+    /* Add subtle hover effect */
+    transition: background-color 0.3s ease-in-out;
+}
+
+#contact a[href*="wa.me"]:hover {
+    background: #1DA851; /* Darker green on hover */
+    transform: scale(1.02); /* Keep consistent with other buttons */
+}
+/* Update your main NAV section */
+nav ul {
+    list-style: none;
+    display: flex; /* Ensure desktop links are a flex row */
+    gap: 18px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+/* FIX: Hide the hamburger toggle on desktop/large screens */
+.mobile-toggle {
+    display: none; /* <-- This is the crucial fix for desktop view */
+    /* ... rest of the .mobile-toggle styles ... */
+}
+
 
 /* Animate into X when expanded */
 .mobile-toggle[aria-expanded="true"] span:nth-child(1) {
